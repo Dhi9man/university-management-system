@@ -1,3 +1,12 @@
+# university_mgmt/settings.py
+
+from pathlib import Path
+import os
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = "p5@_%l*2=(f-=iuc-$=s19h%beuc2**r_%szj8u+hcu3a00ysc"
+
 from pathlib import Path
 import os
 import environ
