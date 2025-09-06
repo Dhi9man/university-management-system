@@ -1,4 +1,16 @@
 from pathlib import Path
+import os
+import environ
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Initialise environment variables
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+from pathlib import Path
 DEBUG = env("DEBUG")
 ALLOWED_HOSTS = env("ALLOWED_HOSTS", default="").split(",") if env("ALLOWED_HOSTS", default="") else []
 
